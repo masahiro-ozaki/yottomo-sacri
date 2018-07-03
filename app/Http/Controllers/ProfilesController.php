@@ -44,6 +44,10 @@ class ProfilesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'content' => 'max:191',
+        ]);
+        
         $profile = new Profile;
         $profile->content = $request->content;
         $profile->save();
@@ -90,6 +94,10 @@ class ProfilesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'content' => 'max:191',
+        ]);
+        
         $profile = Profile::find($id);
         $profile->content = $request->content;
         $profile->save();
