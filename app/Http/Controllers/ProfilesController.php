@@ -46,10 +46,38 @@ class ProfilesController extends Controller
     {
         $this->validate($request, [
             'content' => 'max:191',
+            'name' => 'required|max:191',
+            'nickname' => 'max:191',
+            'birthday' => 'max:191',
+            'gender' => 'max:191',
+            'birthplace' => 'max:191',
+            'character1' => 'max:191',
+            'character2' => 'max:191',
+            'hobby' => 'max:191',
+            'charmpoint' => 'max:191',
+            'dream' => 'max:191',
+            'app' => 'max:191',
+            'rank1' => 'max:191',
+            'rank2' => 'max:191',
+            'rank3' => 'max:191',
         ]);
         
         $profile = new Profile;
         $profile->content = $request->content;
+        $profile->name = $request->name;
+        $profile->nickname = $request->nickname;
+        $profile->birthday = $request->birthday;
+        $profile->gender = $request->gender;
+        $profile->birthplace = $request->birthplace;
+        $profile->character1 = $request->character1;
+        $profile->character2 = $request->character2;
+        $profile->hobby = $request->hobby;
+        $profile->charmpoint = $request->charmpoint;
+        $profile->dream = $request->dream;
+        $profile->app = $request->app;
+        $profile->rank1 = $request->rank1;
+        $profile->rank2 = $request->rank2;
+        $profile->rank3 = $request->rank3;
         $profile->save();
         
         return redirect('/');
@@ -96,10 +124,38 @@ class ProfilesController extends Controller
     {
         $this->validate($request, [
             'content' => 'max:191',
+            'name' => 'required|max:191',
+            'nickname' => 'max:191',
+            'birthday' => 'max:191',
+            'gender' => 'max:191',
+            'birthplace' => 'max:191',
+            'character1' => 'max:191',
+            'character2' => 'max:191',
+            'hobby' => 'max:191',
+            'charmpoint' => 'max:191',
+            'dream' => 'max:191',
+            'app' => 'max:191',
+            'rank1' => 'max:191',
+            'rank2' => 'max:191',
+            'rank3' => 'max:191',
         ]);
         
         $profile = Profile::find($id);
         $profile->content = $request->content;
+        $profile->name = $request->name;
+        $profile->nickname = $request->nickname;
+        $profile->birthday = $request->birthday;
+        $profile->gender = $request->gender;
+        $profile->birthplace = $request->birthplace;
+        $profile->character1 = $request->character1;
+        $profile->character2 = $request->character2;
+        $profile->hobby = $request->hobby;
+        $profile->charmpoint = $request->charmpoint;
+        $profile->dream = $request->dream;
+        $profile->app = $request->app;
+        $profile->rank1 = $request->rank1;
+        $profile->rank2 = $request->rank2;
+        $profile->rank3 = $request->rank3;
         $profile->save();
         
         return redirect('/');
